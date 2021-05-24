@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<wxs
+  module="filter"
+  src="./index.wxs"
+></wxs>
+
+<view class="pyg-index">
+    <!--搜索框-->
+    <SearchInput></SearchInput>
+    <!--轮播图-->
+    <!--
+      1.swiper标签存在默认宽和高100%*150px
+      2.image标签也存在默认宽和高320px*240px
+      3.设计图片和轮播图
+        1）先看一下原图的宽高750*340
+        2）让图片的高度自适应，宽等于100%
+        3）让swiper标签的高度变成和图片的高一样即可
+      4.图片标签
+        mode=widthFix让图片标签的宽高和图片标签内容的宽高都等比例的发生变化  
+    -->
+    <swiper class="index-swiper" autoplay indicator-dots circular interval="2000">
+        <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+          <navigator url="/pages/goods-detail/goods-detail?goods_id={{item.goods_id}}">
+            <image src="{{item.image_src}}" mode="widthFix"></image>
+          </navigator>
+        </swiper-item>
+    </swiper>
+
+    <!--导航区域-->
+    <view class="index-cate">
+      <navigator wx:for="{{catesList}}" 
+      wx:key="name" 
+      url="/pages/category/category"
+      open-type="switchTab">
+        <image mode="widthFix" src="{{item.image_src}}"></image>
+      </navigator>
+    </view>
+
+    <!--楼层区域-->
+    <view class="index-floor">
+      <view class="floor-group" wx:for="{{floorList}}" wx:key="floor_title" wx:for-index="index1">
+        <!--标题-->
+        <view class="floor-title">
+          <image mode="widthFix" src="{{item.floor_title.image_src}}"></image>
+        </view>
+        <!--内容-->
+        <view class="floor-list">
+          <navigator wx:for="{{item.product_list}}" 
+          wx:key="name" 
+          wx:for-index="index2"
+          url="/pages/goods_list/index?{{filter.getQuery(item.navigator_url)}}">
+            <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item.image_src}}"></image>
+          </navigator>
+        </view>
+      </view>
+    </view>
+</view>

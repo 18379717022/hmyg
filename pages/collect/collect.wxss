@@ -1,0 +1,55 @@
+/* pages/collect/collect.wxss */
+.collect_main {
+  background-color: #f3f4f6;
+}
+.collect_main .collect_title {
+  display: flex;
+  padding:20rpx 0;
+}
+.collect_main .collect_title .collect_tips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  background-color: #fff;
+  padding: 15rpx 10rpx;
+}
+.collect_main .collect_title .active{
+  color: var(--themeColor);
+  border: 1rpx solid currentColor;
+}
+.collect_main .collect_content{
+  width: 100%;
+  height: 150rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  padding: 20rpx;
+}
+.collect_img{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect_info{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+.collect_price{
+  color: var(--themeColor);
+}
+.collect_img image{
+  width: 70%;
+}
+.hotmai,.fastout{
+  font-size: 32rpx;
+  color: var(--themeColor);
+  padding-left: 20rpx;
+  margin-top: 50rpx;
+  background-color: #fff;
+}

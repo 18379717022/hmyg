@@ -1,0 +1,105 @@
+/* pages/user/user.wxss */
+page{
+  background-color: #ccc;
+}
+.user_info_wrap{
+  height: 45vh;
+  overflow: hidden;
+  background-color:var(--themeColor);
+  position: relative;
+}
+.user_bg{
+  height: 50vh;
+  filter: blur(10rpx);/*高斯模糊*/
+}
+.user_info{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  color: white;
+}
+.user_icon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_name{
+  margin-top: 20rpx;
+}
+.user_content{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.user_main{
+  position: absolute;
+  width: 90%;
+  top: -40rpx;
+  padding-bottom: 100rpx;
+}
+.history_wrap{
+  display: flex;
+  padding: 10rpx 0;
+  background-color: white;
+}
+.history_wrap navigator{
+  flex:1;
+  text-align: center;
+  font-size: 30rpx;
+}
+.his_num{
+  color: var(--themeColor);
+}
+.orders_wrap{
+  margin-top: 15rpx;
+  background-color: #fff;
+}
+.orders_title{
+  padding: 15rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.order_content{
+  display: flex;
+}
+.order_content navigator{
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 15rpx 0;
+}
+.iconfont{
+  color: var(--themeColor);
+}
+.goods_address{
+  font-size: 30rpx;
+  background-color: #fff;
+  margin-top: 15rpx;
+  padding: 15rpx;
+}
+.three{
+  margin-top: 15rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.kefu{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.advice{
+  padding: 15rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.about{
+  padding: 15rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.recommend{
+  font-size: 30rpx;
+  background-color: #fff;
+  margin-top: 15rpx;
+  padding: 15rpx;
+}

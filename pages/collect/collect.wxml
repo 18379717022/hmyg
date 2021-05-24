@@ -1,0 +1,26 @@
+<!--pages/collect/collect.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <view class="collect_main">
+    <view class="collect_title">
+      <view class="collect_tips {{item.ischoosed?'active':''}}" wx:for="{{collectTitle}}" 
+      wx:key="id" data-index="{{index}}" bindtap="handletitleclick">{{item.value}}</view>
+    </view>
+    <block wx:if="{{collectTitle[0].ischoosed}}">
+      <view class="collect_content" wx:for="{{collect}}" wx:key="goods_id">
+      <view class="collect_img">
+        <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+      </view>
+      <view class="collect_info">
+        <view class="collect_desc">{{item.goods_name}}</view>
+        <view class="collect_price">￥{{item.goods_price}}</view>
+      </view>
+    </view>
+    </block>
+    <block wx:elif="{{collectTitle[1].ischoosed}}">
+      <view class="hotmai">暂无热卖商品</view>
+    </block>
+    <block wx:elif="{{collectTitle[2].ischoosed}}">
+      <view class="fastout">暂无上线商品</view>
+    </block>
+  </view>
+</Tabs>
